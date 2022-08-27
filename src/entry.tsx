@@ -1,6 +1,10 @@
+import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './components/App';
 import { activateTheme } from './utils/activateTheme';
+
+import '@fontsource/inter/500.css';
+import '@fontsource/roboto-slab/700.css';
 import './styles/global.scss';
 
 activateTheme();
@@ -11,4 +15,8 @@ if (!rootContainer) {
 }
 
 const root = createRoot(rootContainer);
-root.render(<App />);
+root.render(
+	<StrictMode>
+		<App />
+	</StrictMode>,
+);
