@@ -1,16 +1,24 @@
+:root {
+	--app-font-heading: 'Roboto Slab', serif;
+	--app-font-body: 'Inter', sans-serif;
+}
+
 html {
-	--app-background-color: #000;
-	--app-text-color: #cdcdcd;
+	color-scheme: dark;
+	--app-color-background: #000;
+	--app-color-text: #cdcdcd;
 }
 
 html.theme-light {
-	--app-background-color: rgb(255, 245, 245);
-	--app-text-color: #000;
+	color-scheme: light;
+	--app-color-background: rgb(255, 245, 245);
+	--app-color-text: #000;
 }
 
 html {
-	background-color: var(--app-background-color);
-	color: var(--app-text-color);
+	background-color: var(--app-color-background);
+	color: var(--app-color-text);
+	font-family: var(--app-font-body);
 }
 
 body {
