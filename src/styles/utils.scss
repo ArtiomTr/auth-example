@@ -1,0 +1,4 @@
+@function themed-transition($property, $duration: standard, $easing: standard) {
+	@return $property + ' ' + var(--app-transition-duration-#{$duration}) + ' ' +
+		var(--app-transition-easing-#{$easing});
+}

@@ -1,24 +1,30 @@
 :root {
-	--app-font-heading: 'Roboto Slab', serif;
-	--app-font-body: 'Inter', sans-serif;
+	--app-font-family-heading: 'Roboto Slab', serif;
+	--app-font-family-body: 'Inter', sans-serif;
+	--app-transition-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+	--app-transition-duration-short: 50ms;
+	--app-transition-duration-standard: 150ms;
 }
 
 html {
 	color-scheme: dark;
-	--app-color-background: #000;
-	--app-color-text: #cdcdcd;
+	--app-color-surface-background: #000;
+	--app-color-surface-card: #111;
+	--app-color-surface-field: #000;
+	--app-color-text-default: #cdcdcd;
+	--app-color-text-error: #f4256d;
 }
 
 html.theme-light {
 	color-scheme: light;
-	--app-color-background: rgb(255, 245, 245);
-	--app-color-text: #000;
+	--app-color-surface-background: rgb(255, 245, 245);
+	--app-color-text-default: #000;
 }
 
 html {
-	background-color: var(--app-color-background);
-	color: var(--app-color-text);
-	font-family: var(--app-font-body);
+	background-color: var(--app-color-surface-background);
+	color: var(--app-color-text-default);
+	font-family: var(--app-font-family-body);
 }
 
 body {
