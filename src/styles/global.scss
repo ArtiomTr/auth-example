@@ -1,0 +1,18 @@
+html {
+	--app-background-color: #000;
+	--app-text-color: #cdcdcd;
+}
+
+html.theme-light {
+	--app-background-color: rgb(255, 245, 245);
+	--app-text-color: #000;
+}
+
+html {
+	background-color: var(--app-background-color);
+	color: var(--app-text-color);
+}
+
+body {
+	margin: 0;
+}
