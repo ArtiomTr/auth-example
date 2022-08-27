@@ -5,7 +5,7 @@ import './styles/global.scss';
 
 activateTheme();
 
-const rootContainer = document.getElementById('root');
+const rootContainer = document.querySelector('#root');
 if (!rootContainer) {
 	throw new Error('Cannot mount react app - element with id "root" not found');
 }
