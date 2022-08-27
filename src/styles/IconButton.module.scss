@@ -1,0 +1,15 @@
+@import 'utils.scss';
+
+.icon-button {
+	padding: 0;
+	background: none;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	transition: themed-transition(transform, short);
+}
+
+.icon-button:active {
+	transform: scale(0.9);
+	transition: themed-transition(transform);
+}
