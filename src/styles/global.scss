@@ -1,20 +1,45 @@
+/* Common variables for both themes */
 :root {
+	/* Fonts */
 	--app-font-family-heading: 'Roboto Slab', serif;
 	--app-font-family-body: 'Inter', sans-serif;
+	--app-font-size-button: 0.9rem;
+
+	/* Transitions */
 	--app-transition-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
 	--app-transition-duration-short: 50ms;
 	--app-transition-duration-standard: 150ms;
+
+	/* Shape definitions */
+	$spacing-step: 8px;
+	--app-shape-spacing-small: #{$spacing-step};
+	--app-shape-spacing-medium: #{$spacing-step * 2};
+	--app-shape-spacing-large: #{$spacing-step * 4};
+	--app-shape-radii-small: 5px;
+	--app-shape-radii-medium: 10px;
+	--app-shape-outline-focus: 2px;
 }
 
+/* Variables for dark theme. */
 html {
 	color-scheme: dark;
-	--app-color-surface-background: #000;
+	--app-color-surface-background: #050505;
 	--app-color-surface-card: #111;
-	--app-color-surface-field: #000;
+	--app-color-surface-field: #050505;
+	--app-color-surface-button: #202020;
+	--app-color-surface-disabled: #000;
 	--app-color-text-default: #cdcdcd;
+	--app-color-text-active: #fff;
 	--app-color-text-error: #f4256d;
+	--app-color-text-disabled: #4d4d4d;
+	--app-color-outline-focus: #fff;
+
+	--app-image-button-loading: conic-gradient(transparent 10%, #df94f4 20%, #3272ff, transparent 50%);
+	// radial-gradient(circle at 50% 10%, #df94f4 20%, #3272ff, transparent 40%)
+	// radial-gradient(circle at 40% 10%, #df94f4 20%, #3272ff, transparent 30%), radial-gradient(circle at 60% 90%, #df94f4 20%, #3272ff, transparent 30%)
 }
 
+/* Variables for light theme. */
 html.theme-light {
 	color-scheme: light;
 	--app-color-surface-background: rgb(255, 245, 245);

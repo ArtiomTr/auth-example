@@ -1,0 +1,93 @@
+@import 'utils.scss';
+
+@keyframes spin {
+	from {
+		transform: translate(-50%, -50%) rotate(0);
+	}
+	to {
+		transform: translate(-50%, -50%) rotate(360deg);
+	}
+}
+
+// Inspired by https://codepen.io/MauriciAbad/pen/WNrpmPr
+.button {
+	/* Temp variables */
+	$border-size: 1px;
+	$border-radius: var(--app-shape-radii-medium);
+
+	/* Unset default styles */
+	border: none;
+	background: none;
+
+	/* Positioning */
+	position: relative;
+	overflow: hidden; // Clip border element.
+	z-index: 0; // Enable correct ordering for ::before & ::after elements.
+
+	/* View styles */
+	padding: var(--app-shape-spacing-small) var(--app-shape-spacing-large);
+	border-radius: $border-radius;
+	font-family: var(--app-font-family-body);
+	font-size: var(--app-font-size-button);
+	color: var(--app-color-text-default);
+	cursor: pointer;
+	transition: themed-transition(color), themed-transition(transform, short);
+
+	/**  
+	 * Background element for the button.
+	 * Why not using background property on button element?
+	 *  - Content is clipped to properly display "border element" during loading. 
+	 *    In order to not overlap the border element, background should be a bit smaller.
+	 */
+	&::after {
+		content: '';
+		position: absolute;
+		inset: $border-size;
+		z-index: -1; // Under button's content, but over border element.
+
+		background-color: var(--app-color-surface-button);
+		border-radius: calc($border-radius - $border-size);
+		transition: themed-transition(background-color);
+	}
+
+	&--loading {
+		/**
+		* Border element for the button
+		*/
+		&::before {
+			content: '';
+
+			position: absolute;
+			z-index: -2; // Under background element.
+			left: 50%; // Center element.
+			top: 50%;
+			$sqrt-2: 1.42; // ~ sqrt(2.0)
+			width: calc(100% * $sqrt-2); // Make element's diagonal bigger than button's width.
+			aspect-ratio: 1; // Make it square.
+
+			background: var(--app-image-button-loading);
+			animation: spin 2s linear infinite;
+		}
+	}
+
+	&:hover {
+		color: var(--app-color-text-active);
+	}
+
+	&:focus-visible {
+		outline: var(--app-shape-outline-focus) solid var(--app-color-outline-focus);
+	}
+
+	&:active:not(:disabled) {
+		transform: scale(0.94);
+		transition: themed-transition(transform);
+	}
+
+	&:disabled {
+		cursor: default;
+		color: var(--app-color-text-disabled);
+		&::after {
+			background-color: var(--app-color-surface-disabled);
+		}
+	}
+}
