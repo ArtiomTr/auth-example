@@ -1,3 +1,12 @@
 {
-	"extends": ["@sirse-dev/eslint-config"]
+	"extends": ["@sirse-dev/eslint-config", "plugin:jsx-a11y/recommended"],
+	"plugins": ["jsx-a11y"],
+	"settings": {
+		"jsx-a11y": {
+			"components": {
+				"Input": "input",
+				"Button": "button"
+			}
+		}
+	}
 }
