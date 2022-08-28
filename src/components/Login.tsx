@@ -6,6 +6,7 @@ import { Heading } from './Heading';
 import { IconButton } from './IconButton';
 import { EyeIcon } from './icons/EyeIcon';
 import { LockClosedIcon } from './icons/LockClosedIcon';
+import { SubmitButton } from './SubmitButton';
 import { TextField } from './TextField';
 
 export const Login = () => {
@@ -14,8 +15,10 @@ export const Login = () => {
 			email: '',
 			password: '',
 		},
-		onSubmit: (values) => {
-			alert(JSON.stringify(values, undefined, 4));
+		onSubmit: async (values) => {
+			await new Promise((resolve) => setTimeout(resolve, 5000));
+			// eslint-disable-next-line no-console
+			console.log(JSON.stringify(values, undefined, 4));
 		},
 	});
 
@@ -39,6 +42,7 @@ export const Login = () => {
 							type="password"
 							name={paths.password}
 						/>
+						<SubmitButton>Sign in</SubmitButton>
 					</Form>
 				</Fragment>
 			)}
