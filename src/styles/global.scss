@@ -3,6 +3,10 @@
 	/* Fonts */
 	--app-font-family-heading: 'Roboto Slab', serif;
 	--app-font-family-body: 'Inter', sans-serif;
+	font-size: 16px;
+	--app-font-size-tiny: 0.75rem;
+	--app-font-size-small: 0.875rem;
+	--app-font-size-medium: 1rem;
 	--app-font-size-button: 0.9rem;
 
 	/* Transitions */
@@ -12,6 +16,7 @@
 
 	/* Shape definitions */
 	$spacing-step: 8px;
+	--app-shape-spacing-tiny: #{$spacing-step * 0.5};
 	--app-shape-spacing-small: #{$spacing-step};
 	--app-shape-spacing-medium: #{$spacing-step * 2};
 	--app-shape-spacing-large: #{$spacing-step * 4};
@@ -47,9 +52,10 @@ html.theme-light {
 }
 
 html {
-	background-color: var(--app-color-surface-background);
 	color: var(--app-color-text-default);
+	background-color: var(--app-color-surface-background);
 	font-family: var(--app-font-family-body);
+	font-size: var(--app-font-size-base);
 }
 
 body {
