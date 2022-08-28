@@ -12,6 +12,7 @@
 	/* View styles */
 	padding: var(--app-shape-spacing-small);
 	border-radius: var(--app-shape-radii-small);
+	color: inherit;
 	cursor: pointer;
 	transition: themed-transition(transform, short);
 
