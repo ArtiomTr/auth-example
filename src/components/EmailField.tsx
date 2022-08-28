@@ -18,5 +18,5 @@ export const EmailField = ({ required, ...passedProps }: EmailFieldProps) => {
 		return schema;
 	}, [required]);
 
-	return <TextField {...passedProps} type="email" startAdornment={<AtIcon />} schema={schema} />;
+	return <TextField startAdornment={<AtIcon />} {...passedProps} type="email" schema={schema} />;
 };
