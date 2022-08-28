@@ -4,15 +4,48 @@
 	--field-color-surface: var(--app-color-surface-field);
 	--field-color-text: var(--app-color-text-body);
 
+	color: var(--field-color-text);
+
+	&__area {
+		/* Layout */
+		display: grid;
+		grid-template-columns: min-content 1fr min-content;
+
+		/* Positioning */
+		position: relative;
+
+		/* View styles */
+		border-radius: var(--app-shape-radii-small);
+		background-color: var(--field-color-surface);
+		margin-top: var(--app-shape-spacing-tiny);
+	}
+
+	&__input {
+		/* Unset default styles */
+		outline: none;
+		border: none;
+		background: none;
+		padding: 0;
+
+		/* Positioning */
+		grid-column: 2;
+		grid-row: 2;
+
+		/* View styles */
+		text-overflow: ellipsis;
+		font-family: var(--app-font-family-body);
+		font-size: var(--app-font-size-medium);
+		padding: var(--app-shape-spacing-small);
+		padding-top: calc(var(--app-shape-spacing-small) + var(--app-font-size-tiny));
+	}
+
 	&--error {
 		--field-color-text: var(--app-color-text-error);
 	}
 
-	color: var(--field-color-text);
-
 	&__helper-text {
-		font-size: 14px;
-		margin: 4px 8px;
+		font-size: var(--app-font-size-small);
+		margin: var(--app-shape-spacing-tiny) var(--app-shape-spacing-small);
 		opacity: 1;
 		transition: themed-transition(opacity, short);
 
@@ -22,64 +55,40 @@
 		}
 	}
 
-	&__area {
-		display: grid;
-		grid-template-columns: min-content 1fr min-content;
-		border-radius: 5px;
-		background-color: var(--field-color-surface);
-		position: relative;
-		margin-top: 5px;
-	}
-
 	&__label {
+		/* Positioning */
 		grid-column: 2;
 		grid-row: 1;
-		font-size: 1rem;
 		position: absolute;
-		width: 100%;
+		padding-left: var(--app-shape-spacing-small);
+		// Calculate total space and divide it to two - for top and bottom paddings.
+		top: calc((var(--app-shape-spacing-small) + var(--app-font-size-tiny) + var(--app-shape-spacing-small)) / 2);
+
+		/* View styles */
+		font-size: var(--app-font-size-medium);
 		pointer-events: none;
-		cursor: text;
-		top: 14px;
-		transform: translateX(8px);
 		transition: themed-transition(top), themed-transition(font-size);
 	}
 
 	&__input:focus ~ &__label,
 	&__input:not(:placeholder-shown) ~ &__label {
-		top: 4px;
-		font-size: 12px;
-		pointer-events: none;
-	}
-
-	&__input {
-		outline: none;
-		border: none;
-		background: none;
-		font-weight: normal;
-		padding: 0;
-		text-overflow: ellipsis;
-
-		font-family: var(--app-font-family-body);
-		font-size: 1rem;
-		padding: 20px 8px 8px 8px;
-		grid-column: 2;
-		grid-row: 2;
+		top: var(--app-shape-spacing-tiny);
+		font-size: var(--app-font-size-tiny);
 	}
 
 	&__start-adornment,
 	&__end-adornment {
+		grid-row: 1 / span 2;
 		display: flex;
 		align-items: center;
 	}
 
 	&__start-adornment {
-		grid-row: 1 / span 2;
-		padding-left: 8px;
+		padding-left: var(--app-shape-spacing-small);
 	}
 
 	&__end-adornment {
-		grid-row: 1 / span 2;
 		grid-column: 3;
-		padding-right: 8px;
+		padding-right: var(--app-shape-spacing-small);
 	}
 }
