@@ -1,12 +1,12 @@
 import { ReactiveFormProvider, useForm } from '@reactive-forms/core';
 import { Form } from '@reactive-forms/dom';
-import { Fragment } from 'react';
+import classes from '../styles/SignIn.module.scss';
 import { EmailField } from './EmailField';
 import { Heading } from './Heading';
 import { PasswordField } from './PasswordField';
 import { SubmitButton } from './SubmitButton';
 
-export const Login = () => {
+export const SignIn = () => {
 	const formBag = useForm({
 		initialValues: {
 			email: '',
@@ -24,14 +24,14 @@ export const Login = () => {
 	return (
 		<ReactiveFormProvider formBag={formBag}>
 			{() => (
-				<Fragment>
-					<Heading>Welcome back!</Heading>
-					<Form>
-						<EmailField label="Email" name={paths.email} required />
-						<PasswordField label="Password" name={paths.password} required minLength={6} maxLength={20} />
-						<SubmitButton>Sign in</SubmitButton>
-					</Form>
-				</Fragment>
+				<Form className={classes['form']}>
+					<Heading variant="h5" as="h1">
+						Sign in to continue
+					</Heading>
+					<EmailField label="Email" name={paths.email} required />
+					<PasswordField label="Password" name={paths.password} required minLength={6} maxLength={20} />
+					<SubmitButton className={classes['form__submit-button']}>Sign in</SubmitButton>
+				</Form>
 			)}
 		</ReactiveFormProvider>
 	);

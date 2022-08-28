@@ -1,9 +1,9 @@
 import { useCallback, useMemo, useState } from 'react';
 import * as yup from 'yup';
+import EyeOffIcon from '../assets/icons/eye-off-outline.svg?component';
+import EyeIcon from '../assets/icons/eye-outline.svg?component';
+import KeyIcon from '../assets/icons/key.svg?component';
 import { IconButton } from './IconButton';
-import { EyeIcon } from './icons/EyeIcon';
-import { EyeOffIcon } from './icons/EyeOffIcon';
-import { LockClosedIcon } from './icons/LockClosedIcon';
 import { TextField, type TextFieldProps } from './TextField';
 
 export type PasswordFieldProps = Omit<TextFieldProps, 'schema' | 'validator' | 'type' | 'minLength' | 'maxLength'> & {
@@ -19,15 +19,15 @@ export const PasswordField = ({ required, minLength, maxLength, ...passedProps }
 		let schema = yup.string();
 
 		if (required) {
-			schema = schema.required('Field is required.');
+			schema = schema.required('Password is required.');
 		}
 
 		if (minLength) {
-			schema = schema.min(minLength, 'Must be at least ${min} characters.');
+			schema = schema.min(minLength, 'Password must be at least ${min} characters.');
 		}
 
 		if (maxLength) {
-			schema = schema.max(maxLength, 'Must be at most ${max} characters.');
+			schema = schema.max(maxLength, 'Password must be at most ${max} characters.');
 		}
 
 		return schema;
@@ -44,11 +44,11 @@ export const PasswordField = ({ required, minLength, maxLength, ...passedProps }
 					title={isPasswordVisible ? 'Hide password' : 'Show password'}
 					onClick={togglePasswordVisibility}
 				>
-					{isPasswordVisible ? <EyeOffIcon /> : <EyeIcon />}
+					{isPasswordVisible ? <EyeOffIcon aria-hidden="true" /> : <EyeIcon aria-hidden="true" />}
 				</IconButton>
 			}
 			autoComplete="off"
-			startAdornment={<LockClosedIcon />}
+			startAdornment={<KeyIcon aria-hidden="true" />}
 			{...passedProps}
 			type={isPasswordVisible ? 'text' : 'password'}
 			schema={schema}

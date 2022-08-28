@@ -1,3 +1,14 @@
+@mixin heading-variants($variants...) {
+	@for $i from 0 to length($variants) {
+		$variant: nth($variants, $i + 1);
+		&--#{$variant} {
+			font-size: var(--app-font-size-#{$variant});
+		}
+	}
+}
+
 .heading {
 	font-family: var(--app-font-family-heading);
+
+	@include heading-variants('h1', 'h2', 'h3', 'h4', 'h5', 'h6');
 }

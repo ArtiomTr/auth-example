@@ -1,12 +1,28 @@
 .app {
 	display: grid;
-	grid-template-columns: 0.5fr 0.7fr;
+	grid-template-columns: 1fr 1fr;
 	align-items: center;
 	height: 100vh;
 	justify-content: center;
 
+	$background-size: 40px;
+	$dot-size: 1px;
+	$dot-color: #333;
+	background: radial-gradient($dot-color $dot-size, transparent $dot-size),
+		radial-gradient(
+			circle at ($background-size - $dot-size) ($background-size - $dot-size),
+			$dot-color $dot-size,
+			transparent $dot-size
+		);
+	background-size: $background-size $background-size;
+
 	&__auth-container {
 		justify-self: center;
 		margin: 20px;
+	}
+
+	&__welcome-container {
+		background-color: #000;
+		height: 100%;
 	}
 }

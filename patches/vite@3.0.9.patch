@@ -1,0 +1,21 @@
+diff --git a/client.d.ts b/client.d.ts
+index e99b4a526b7a583f1c460d7a5648b2684243ba2f..a7df3e27c8c33cc23d15dd55a56ff95251c60a70 100644
+--- a/client.d.ts
++++ b/client.d.ts
+@@ -1,4 +1,5 @@
+ /// <reference path="./types/importMeta.d.ts" />
++/// <reference types="react" />
+ 
+ // CSS modules
+ type CSSModuleClasses = { readonly [key: string]: string }
+@@ -94,6 +95,10 @@ declare module '*.gif' {
+   const src: string
+   export default src
+ }
++declare module '*.svg?component' {
++  const component: React.ComponentType<React.SVGAttributes<SVGSVGElement>>
++  export default component
++}
+ declare module '*.svg' {
+   const src: string
+   export default src

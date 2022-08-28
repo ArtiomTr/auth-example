@@ -1,17 +1,13 @@
-import { createPluginArray, FormPlugins } from '@reactive-forms/core';
-import { domPlugin } from '@reactive-forms/dom';
 import classes from '../styles/App.module.scss';
 import { Card } from './Card';
-import { Login } from './Login';
-
-const plugins = createPluginArray(domPlugin);
+import { SignIn } from './SignIn';
+import { WelcomeContainer } from './WelcomeContainer';
 
 export const App = () => (
-	<FormPlugins plugins={plugins}>
-		<div className={classes['app']}>
-			<Card className={classes['app__auth-container']}>
-				<Login />
-			</Card>
-		</div>
-	</FormPlugins>
+	<div className={classes['app']}>
+		<Card as="main" className={classes['app__auth-container']}>
+			<SignIn />
+		</Card>
+		<WelcomeContainer className={classes['app__welcome-container']} />
+	</div>
 );

@@ -34,11 +34,10 @@ export const TextField = ({ name, onChange, onBlur, schema, validator, ...passed
 	return (
 		<Input
 			{...passedProps}
-			helperText={(touched?.$touched && error?.$error) || undefined}
+			error={(touched?.$touched && error?.$error) || undefined}
 			onBlur={handleBlur}
 			onChange={handleChange}
 			value={value}
-			hasError={Boolean(touched?.$touched && error?.$error)}
 		/>
 	);
 };
