@@ -1,15 +1,26 @@
 @import 'utils.scss';
 
 .icon-button {
-	padding: 0;
+	/* Reset styles */
 	background: none;
 	border: none;
 	outline: none;
+
+	/* Layout */
+	display: flex;
+
+	/* View styles */
+	padding: var(--app-shape-spacing-small);
+	border-radius: var(--app-shape-radii-small);
 	cursor: pointer;
 	transition: themed-transition(transform, short);
-}
 
-.icon-button:active {
-	transform: scale(0.9);
-	transition: themed-transition(transform);
+	&:active {
+		transform: scale(0.9);
+		transition: themed-transition(transform);
+	}
+
+	&:focus-visible {
+		@include tab-selected;
+	}
 }
