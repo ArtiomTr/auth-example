@@ -23,7 +23,9 @@ export class ThemeController {
 
 	public get theme(): Theme {
 		if (!this.isInitialized) {
-			throw new Error('Theme controller is not initialized. Maybe you forgot to call `.initialize()`?');
+			throw new Error(
+				'Theme controller is not initialized. Maybe you forgot to call `.initialize()`?',
+			);
 		}
 		return this.currentTheme;
 	}
@@ -31,11 +33,15 @@ export class ThemeController {
 	public set theme(newValue: Theme) {
 		if (!this.isValidTheme(newValue)) {
 			Cookies.remove(this.themeCookieName);
-			throw new Error(`Not recognized theme value "${newValue}". Valid values are: ["dark", "light"].`);
+			throw new Error(
+				`Not recognized theme value "${newValue}". Valid values are: ["dark", "light"].`,
+			);
 		}
 
 		this.currentTheme = newValue;
-		Cookies.set(this.themeCookieName, newValue, { expires: this.themeCookieLifetime });
+		Cookies.set(this.themeCookieName, newValue, {
+			expires: this.themeCookieLifetime,
+		});
 
 		if (newValue === 'dark') {
 			document.documentElement.classList.remove(this.lightThemeClassName);
@@ -48,7 +54,11 @@ export class ThemeController {
 		typeof value === 'string' && ['light', 'dark'].includes(value);
 
 	private getThemeFromDocument = (): Theme => {
-		return document.documentElement.classList.contains(this.lightThemeClassName) ? 'light' : 'dark';
+		return document.documentElement.classList.contains(
+			this.lightThemeClassName,
+		)
+			? 'light'
+			: 'dark';
 	};
 
 	private getFromCookies = (): Theme | undefined => {
@@ -62,7 +72,9 @@ export class ThemeController {
 	};
 
 	private getUserPreference = (): Theme => {
-		const { matches: isPreferringLight } = window.matchMedia('(prefers-color-scheme: light)');
+		const { matches: isPreferringLight } = window.matchMedia(
+			'(prefers-color-scheme: light)',
+		);
 
 		return isPreferringLight ? 'light' : 'dark';
 	};

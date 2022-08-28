@@ -62,7 +62,9 @@
 			left: 50%; // Center element.
 			top: 50%;
 			$sqrt-2: 1.42; // ~ sqrt(2.0)
-			width: calc(100% * $sqrt-2); // Make element's diagonal bigger than button's width.
+			width: calc(
+				100% * $sqrt-2
+			); // Make element's diagonal bigger than button's width.
 			aspect-ratio: 1; // Make it square.
 
 			background: var(--app-image-button-loading);

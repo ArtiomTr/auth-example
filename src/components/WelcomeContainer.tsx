@@ -6,10 +6,19 @@ import classes from '../styles/WelcomeContainer.module.scss';
 import { Heading } from './Heading';
 import { ThemeSwitch } from './ThemeSwitch';
 
-export type WelcomeContainerProps = Omit<HTMLAttributes<HTMLDivElement>, 'children'>;
+export type WelcomeContainerProps = Omit<
+	HTMLAttributes<HTMLDivElement>,
+	'children'
+>;
 
-export const WelcomeContainer = ({ className, ...passedProps }: WelcomeContainerProps) => (
-	<div {...passedProps} className={clsx(classes['welcome-container'], className)}>
+export const WelcomeContainer = ({
+	className,
+	...passedProps
+}: WelcomeContainerProps) => (
+	<div
+		{...passedProps}
+		className={clsx(classes['welcome-container'], className)}
+	>
 		<header aria-label="App header" className={classes['header']}>
 			<a
 				href="https://github.com/ArtiomTr/auth-example#readme"
@@ -28,11 +37,18 @@ export const WelcomeContainer = ({ className, ...passedProps }: WelcomeContainer
 				Welcome back!
 			</Heading>
 
-			<p>We&apos;re happy to see you. Please, enter your credentials to log into DummyApp.</p>
+			<p>
+				We&apos;re happy to see you. Please, enter your credentials to
+				log into DummyApp.
+			</p>
 		</section>
 		<footer className={classes['footer']}>
 			<span>Copyright © 2022 Dummy Inc. All rights reserved.</span>
-			<a target="_blank" rel="noreferrer" href="https://github.com/ArtiomTr/auth-example#readme">
+			<a
+				target="_blank"
+				rel="noreferrer"
+				href="https://github.com/ArtiomTr/auth-example#readme"
+			>
 				<GithubIcon />
 			</a>
 		</footer>
