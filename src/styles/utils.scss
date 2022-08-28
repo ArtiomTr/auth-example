@@ -1,8 +1,0 @@
-@mixin tab-selected {
-	outline: var(--app-shape-outline-focus) solid var(--app-color-outline-focus);
-}
-
-@function themed-transition($property, $duration: standard, $easing: standard) {
-	@return $property + ' ' + var(--app-transition-duration-#{$duration}) + ' ' +
-		var(--app-transition-easing-#{$easing});
-}
