@@ -29,8 +29,16 @@ export const SignIn = () => {
 						Sign in to continue
 					</Heading>
 					<EmailField label="Email" name={paths.email} required />
-					<PasswordField label="Password" name={paths.password} required minLength={6} maxLength={20} />
-					<SubmitButton className={classes['form__submit-button']}>Sign in</SubmitButton>
+					<PasswordField
+						label="Password"
+						name={paths.password}
+						required
+						minLength={6}
+						maxLength={20}
+					/>
+					<SubmitButton className={classes['form__submit-button']}>
+						Sign in
+					</SubmitButton>
 				</Form>
 			)}
 		</ReactiveFormProvider>

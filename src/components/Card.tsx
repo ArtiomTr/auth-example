@@ -6,7 +6,12 @@ export type CardProps = HTMLAttributes<HTMLDivElement> & {
 	as?: keyof ReactHTML;
 };
 
-export const Card = ({ className, children, as = 'div', ...passedProps }: CardProps) => {
+export const Card = ({
+	className,
+	children,
+	as = 'div',
+	...passedProps
+}: CardProps) => {
 	return createElement(
 		as,
 		{

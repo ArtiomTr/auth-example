@@ -3,7 +3,10 @@ import * as yup from 'yup';
 import AtIcon from '../assets/icons/at-outline.svg?component';
 import { TextField, type TextFieldProps } from './TextField';
 
-export type EmailFieldProps = Omit<TextFieldProps, 'schema' | 'validator' | 'type'> & {
+export type EmailFieldProps = Omit<
+	TextFieldProps,
+	'schema' | 'validator' | 'type'
+> & {
 	required?: boolean;
 };
 
@@ -18,5 +21,12 @@ export const EmailField = ({ required, ...passedProps }: EmailFieldProps) => {
 		return schema;
 	}, [required]);
 
-	return <TextField startAdornment={<AtIcon aria-hidden="true" />} {...passedProps} type="email" schema={schema} />;
+	return (
+		<TextField
+			startAdornment={<AtIcon aria-hidden="true" />}
+			{...passedProps}
+			type="email"
+			schema={schema}
+		/>
+	);
 };

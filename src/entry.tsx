@@ -12,7 +12,9 @@ new ThemeController().initialize();
 
 const rootContainer = document.querySelector('#root');
 if (!rootContainer) {
-	throw new Error('Cannot mount react app - element with id "root" not found');
+	throw new Error(
+		'Cannot mount react app - element with id "root" not found',
+	);
 }
 
 const plugins = createPluginArray(domPlugin);

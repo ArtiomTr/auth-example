@@ -10,7 +10,8 @@
 	$dot-color: #333;
 	background: radial-gradient($dot-color $dot-size, transparent $dot-size),
 		radial-gradient(
-			circle at ($background-size - $dot-size) ($background-size - $dot-size),
+			circle at ($background-size - $dot-size)
+				($background-size - $dot-size),
 			$dot-color $dot-size,
 			transparent $dot-size
 		);

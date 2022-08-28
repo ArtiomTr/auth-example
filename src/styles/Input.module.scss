@@ -36,7 +36,9 @@
 		font-family: var(--app-font-family-body);
 		font-size: var(--app-font-size-medium);
 		padding: var(--app-shape-spacing-small);
-		padding-top: calc(var(--app-shape-spacing-small) + var(--app-font-size-tiny));
+		padding-top: calc(
+			var(--app-shape-spacing-small) + var(--app-font-size-tiny)
+		);
 	}
 
 	&--error {
@@ -62,7 +64,12 @@
 		position: absolute;
 		padding-left: var(--app-shape-spacing-small);
 		// Calculate total space and divide it to two - for top and bottom paddings.
-		top: calc((var(--app-shape-spacing-small) + var(--app-font-size-tiny) + var(--app-shape-spacing-small)) / 2);
+		top: calc(
+			(
+					var(--app-shape-spacing-small) + var(--app-font-size-tiny) +
+						var(--app-shape-spacing-small)
+				) / 2
+		);
 
 		/* View styles */
 		font-size: var(--app-font-size-medium);

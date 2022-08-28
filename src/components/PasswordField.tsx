@@ -6,13 +6,21 @@ import KeyIcon from '../assets/icons/key.svg?component';
 import { IconButton } from './IconButton';
 import { TextField, type TextFieldProps } from './TextField';
 
-export type PasswordFieldProps = Omit<TextFieldProps, 'schema' | 'validator' | 'type' | 'minLength' | 'maxLength'> & {
+export type PasswordFieldProps = Omit<
+	TextFieldProps,
+	'schema' | 'validator' | 'type' | 'minLength' | 'maxLength'
+> & {
 	required?: boolean;
 	minLength?: number;
 	maxLength?: number;
 };
 
-export const PasswordField = ({ required, minLength, maxLength, ...passedProps }: PasswordFieldProps) => {
+export const PasswordField = ({
+	required,
+	minLength,
+	maxLength,
+	...passedProps
+}: PasswordFieldProps) => {
 	const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
 	const schema = useMemo(() => {
@@ -23,11 +31,17 @@ export const PasswordField = ({ required, minLength, maxLength, ...passedProps }
 		}
 
 		if (minLength) {
-			schema = schema.min(minLength, 'Password must be at least ${min} characters.');
+			schema = schema.min(
+				minLength,
+				'Password must be at least ${min} characters.',
+			);
 		}
 
 		if (maxLength) {
-			schema = schema.max(maxLength, 'Password must be at most ${max} characters.');
+			schema = schema.max(
+				maxLength,
+				'Password must be at most ${max} characters.',
+			);
 		}
 
 		return schema;
@@ -41,10 +55,16 @@ export const PasswordField = ({ required, minLength, maxLength, ...passedProps }
 		<TextField
 			endAdornment={
 				<IconButton
-					title={isPasswordVisible ? 'Hide password' : 'Show password'}
+					title={
+						isPasswordVisible ? 'Hide password' : 'Show password'
+					}
 					onClick={togglePasswordVisibility}
 				>
-					{isPasswordVisible ? <EyeOffIcon aria-hidden="true" /> : <EyeIcon aria-hidden="true" />}
+					{isPasswordVisible ? (
+						<EyeOffIcon aria-hidden="true" />
+					) : (
+						<EyeIcon aria-hidden="true" />
+					)}
 				</IconButton>
 			}
 			autoComplete="off"

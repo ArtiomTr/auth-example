@@ -21,7 +21,11 @@ export const Heading = ({
 		HeadingComponent,
 		{
 			...passedProps,
-			className: clsx(classes['heading'], classes[`heading--${variant}`], className),
+			className: clsx(
+				classes['heading'],
+				classes[`heading--${variant}`],
+				className,
+			),
 		},
 		children,
 	);

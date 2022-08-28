@@ -8,7 +8,14 @@ export type TextFieldProps = Omit<InputProps, 'value' | 'name'> & {
 	name: Pxth<string>;
 } & FieldValidationProps<string>;
 
-export const TextField = ({ name, onChange, onBlur, schema, validator, ...passedProps }: TextFieldProps) => {
+export const TextField = ({
+	name,
+	onChange,
+	onBlur,
+	schema,
+	validator,
+	...passedProps
+}: TextFieldProps) => {
 	const {
 		value,
 		control: { setValue, setTouched },

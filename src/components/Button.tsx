@@ -6,8 +6,20 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 	isLoading?: boolean;
 };
 
-export const Button = ({ isLoading, children, className, ...passedProps }: ButtonProps) => (
-	<button {...passedProps} className={clsx(classes['button'], isLoading && classes['button--loading'], className)}>
+export const Button = ({
+	isLoading,
+	children,
+	className,
+	...passedProps
+}: ButtonProps) => (
+	<button
+		{...passedProps}
+		className={clsx(
+			classes['button'],
+			isLoading && classes['button--loading'],
+			className,
+		)}
+	>
 		{children}
 	</button>
 );

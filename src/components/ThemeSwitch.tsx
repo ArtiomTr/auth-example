@@ -5,7 +5,10 @@ import classes from '../styles/ThemeSwitch.module.scss';
 import { ThemeController } from '../utils/ThemeController';
 
 export const ThemeSwitch = () => {
-	const themeController = useMemo(() => new ThemeController().initialize(true), []);
+	const themeController = useMemo(
+		() => new ThemeController().initialize(true),
+		[],
+	);
 
 	const [theme, setTheme] = useState(themeController.theme);
 
@@ -30,7 +33,11 @@ export const ThemeSwitch = () => {
 			/>
 			<span className={classes['switch__track']}>
 				<span className={classes['switch__thumb']}>
-					{theme === 'dark' ? <MoonIcon aria-hidden="true" /> : <SunnyIcon aria-hidden="true" />}
+					{theme === 'dark' ? (
+						<MoonIcon aria-hidden="true" />
+					) : (
+						<SunnyIcon aria-hidden="true" />
+					)}
 				</span>
 			</span>
 		</span>
