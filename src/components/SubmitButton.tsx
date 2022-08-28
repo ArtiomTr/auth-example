@@ -1,8 +1,9 @@
 import { useFormContext, useFormMeta } from '@reactive-forms/core';
-import { PropsWithChildren } from 'react';
-import { Button } from './Button';
+import { Button, type ButtonProps } from './Button';
 
-export const SubmitButton = ({ children }: PropsWithChildren) => {
+export type SubmitButtonProps = Omit<ButtonProps, 'type' | 'disabled' | 'isLoading'>;
+
+export const SubmitButton = ({ children, ...passedProps }: SubmitButtonProps) => {
 	const {
 		formMeta: { paths },
 	} = useFormContext();
@@ -10,7 +11,7 @@ export const SubmitButton = ({ children }: PropsWithChildren) => {
 	const isSubmitting = useFormMeta(paths.isSubmitting);
 
 	return (
-		<Button disabled={isSubmitting} type="submit" isLoading={isSubmitting}>
+		<Button {...passedProps} disabled={isSubmitting} type="submit" isLoading={isSubmitting}>
 			{children}
 		</Button>
 	);

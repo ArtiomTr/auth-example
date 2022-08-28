@@ -1,0 +1,59 @@
+@import 'utils.scss';
+
+.switch {
+	$track-width: 45px;
+	$track-height: 16px;
+	$thumb-width: 40px;
+	$thumb-height: 40px;
+
+	width: $track-width + $thumb-width;
+	height: $thumb-height;
+	position: relative;
+	display: inline-block;
+
+	&__input {
+		position: absolute;
+		inset: 0;
+		opacity: 0.001;
+		margin: 0;
+		cursor: pointer;
+	}
+
+	&__input[aria-checked='true'] ~ &__thumb {
+		&::after {
+			left: 100%;
+			top: 50%;
+		}
+	}
+
+	&__track {
+		width: $track-width;
+		height: $track-height;
+		margin: (($thumb-height - $track-height) * 0.5) ($thumb-width * 0.5);
+		display: inline-block;
+		border-radius: $track-height * 0.5;
+		inset: 0;
+		position: relative;
+		pointer-events: none;
+		background-color: #202020;
+	}
+
+	&__input[aria-checked='true'] ~ &__track > &__thumb {
+		left: calc(100% - $track-height * 0.5);
+	}
+
+	&__thumb {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		width: $thumb-width;
+		height: $thumb-height;
+		transform: translate(-50%, -50%);
+		left: $track-height * 0.5;
+		top: 50%;
+		border-radius: 50%;
+		background-color: #303030;
+		transition: themed-transition(left);
+	}
+}
