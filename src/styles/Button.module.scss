@@ -28,7 +28,7 @@
 	padding: var(--app-shape-spacing-small) var(--app-shape-spacing-large);
 	border-radius: $border-radius;
 	font-family: var(--app-font-family-body);
-	font-size: 0.9rem;
+	font-size: var(--app-font-size-button);
 	color: var(--app-color-text-default);
 	cursor: pointer;
 	transition: themed-transition(color), themed-transition(transform, short);
