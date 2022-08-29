@@ -9,7 +9,6 @@
 	--app-font-size-tiny: 0.75rem;
 	--app-font-size-small: 0.875rem;
 	--app-font-size-medium: 1rem;
-	--app-font-size-button: 0.9rem;
 
 	@include themed-media('mobile') {
 		--app-font-size-h1: 2rem;
@@ -18,6 +17,7 @@
 		--app-font-size-h4: 1.6rem;
 		--app-font-size-h5: 1.5rem;
 		--app-font-size-h6: 1.25rem;
+		--app-font-size-button: 1rem;
 	}
 
 	@include themed-media('desktop', 'tablet') {
@@ -27,23 +27,19 @@
 		--app-font-size-h4: 2.125rem;
 		--app-font-size-h5: 1.5rem;
 		--app-font-size-h6: 1.25rem;
+		--app-font-size-button: 0.9rem;
 	}
 	/* Transitions */
 	--app-transition-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
 	--app-transition-duration-short: 50ms;
 	--app-transition-duration-standard: 150ms;
 
+	/* Shape definitions */
 	$spacing-step: 8px;
 	--app-shape-spacing-tiny: #{$spacing-step * 0.5};
 	--app-shape-spacing-small: #{$spacing-step};
 	--app-shape-spacing-medium: #{$spacing-step * 2};
 	--app-shape-spacing-large: #{$spacing-step * 4};
-
-	/* Shape definitions */
-	@include themed-media('mobile') {
-		--app-shape-spacing-large: 20px;
-	}
-
 	--app-shape-radii-small: 5px;
 	--app-shape-radii-medium: 10px;
 	--app-shape-outline-focus: 2px;

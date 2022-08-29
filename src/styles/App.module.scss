@@ -4,15 +4,6 @@
 	display: grid;
 	min-height: 100vh;
 
-	&__header,
-	&__footer {
-		padding: var(--app-shape-spacing-large);
-	}
-
-	&__welcome {
-		padding: 0 var(--app-shape-spacing-large);
-	}
-
 	&__welcome {
 		grid-row: 2;
 	}
@@ -26,8 +17,12 @@
 
 	@include themed-media('tablet', 'mobile') {
 		grid-template-rows: min-content min-content 1fr min-content;
+		&__header,
+		&__footer {
+			padding: var(--app-shape-spacing-medium);
+		}
 		&__welcome {
-			padding: var(--app-shape-spacing-large);
+			padding: var(--app-shape-spacing-medium);
 		}
 	}
 
@@ -40,12 +35,14 @@
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: min-content 1fr min-content;
 
-		&__header {
+		&__header,
+		&__footer {
+			padding: var(--app-shape-spacing-large);
 			grid-column: 2;
 		}
 
-		&__footer {
-			grid-column: 2;
+		&__welcome {
+			padding: 0 var(--app-shape-spacing-large);
 		}
 
 		&__main {
