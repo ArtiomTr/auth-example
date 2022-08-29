@@ -2,4 +2,6 @@
 	background-color: var(--app-color-surface-card);
 	padding: var(--app-shape-spacing-medium) var(--app-shape-spacing-large);
 	border-radius: var(--app-shape-radii-small);
+	box-shadow: var(--app-shadow-elevation-small);
+	outline: 1px solid var(--app-color-outline-card);
 }

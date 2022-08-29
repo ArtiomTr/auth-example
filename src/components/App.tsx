@@ -9,7 +9,7 @@ export const App = () => (
 	<div className={classes['app']}>
 		<Header className={classes['app__header']} />
 		<div className={classes['app__main']}>
-			<Card as="main">
+			<Card className={classes['app__main-card']} as="main">
 				<SignIn />
 			</Card>
 		</div>

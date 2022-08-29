@@ -17,8 +17,8 @@ export const WelcomeContainer = ({
 			Welcome back!
 		</Heading>
 		<p className={classes['container__text']}>
-			We&apos;re happy to see you. Lorem ipsum dolor sit amet, consectetur
-			adipiscing elit.
+			We&apos;re happy to see you. Put your login credentials to start
+			discovering content posted on our platform.
 		</p>
 	</section>
 );
