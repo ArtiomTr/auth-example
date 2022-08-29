@@ -67,6 +67,7 @@ export const PasswordField = ({
 					)}
 				</IconButton>
 			}
+			required={required}
 			autoComplete="off"
 			startAdornment={<KeyIcon aria-hidden="true" />}
 			{...passedProps}

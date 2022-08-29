@@ -26,6 +26,7 @@ export const EmailField = ({ required, ...passedProps }: EmailFieldProps) => {
 			startAdornment={<AtIcon aria-hidden="true" />}
 			{...passedProps}
 			type="email"
+			required={required}
 			schema={schema}
 		/>
 	);
