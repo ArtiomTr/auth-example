@@ -1,63 +1,12 @@
 @import 'utils.scss';
 
-.welcome-container {
-	padding: 40px;
-	box-sizing: border-box;
-
-	display: grid;
-	grid-template-rows: min-content 1fr min-content;
-
-	.header,
-	.footer {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
+.container {
+	&__heading {
+		margin: 16px 0;
 	}
 
-	.footer {
-		&__copyright {
-			color: #444;
-		}
-
-		&__github {
-			color: #fff;
-			width: 2rem;
-			height: 2rem;
-			transition: themed-transition(color);
-
-			&:hover {
-				color: #cdcdcd;
-			}
-		}
-	}
-
-	.content {
-		align-self: center;
-
-		&__heading {
-			margin: 16px 0;
-		}
-
-		&__text {
-			max-width: 450px;
-			color: #888;
-		}
-	}
-}
-
-.brand {
-	display: flex;
-	align-items: center;
-	text-decoration: none;
-
-	&__logo {
-		width: 60px;
-		height: 60px;
-	}
-
-	&__name {
-		margin-left: 10px;
-		color: var(--app-color-text-active);
-		font-size: 1.3rem;
+	&__text {
+		max-width: 450px;
+		color: #888;
 	}
 }

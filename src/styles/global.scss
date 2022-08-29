@@ -1,3 +1,5 @@
+@import 'utils.scss';
+
 /* Common variables for both themes */
 :root {
 	/* Fonts */
@@ -8,13 +10,24 @@
 	--app-font-size-small: 0.875rem;
 	--app-font-size-medium: 1rem;
 	--app-font-size-button: 0.9rem;
-	--app-font-size-h1: 4rem;
-	--app-font-size-h2: 3rem;
-	--app-font-size-h3: 2.75rem;
-	--app-font-size-h4: 2.125rem;
-	--app-font-size-h5: 1.5rem;
-	--app-font-size-h6: 1.25rem;
 
+	@include themed-media('mobile') {
+		--app-font-size-h1: 2rem;
+		--app-font-size-h2: 1.85rem;
+		--app-font-size-h3: 1.75rem;
+		--app-font-size-h4: 1.6rem;
+		--app-font-size-h5: 1.5rem;
+		--app-font-size-h6: 1.25rem;
+	}
+
+	@include themed-media('desktop', 'tablet') {
+		--app-font-size-h1: 4rem;
+		--app-font-size-h2: 3rem;
+		--app-font-size-h3: 2.75rem;
+		--app-font-size-h4: 2.125rem;
+		--app-font-size-h5: 1.5rem;
+		--app-font-size-h6: 1.25rem;
+	}
 	/* Transitions */
 	--app-transition-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
 	--app-transition-duration-short: 50ms;
@@ -37,7 +50,8 @@
 /* Variables for dark theme. */
 html {
 	color-scheme: dark;
-	--app-color-surface-background: #050505;
+	--app-color-surface-background: #030303;
+	--app-color-surface-background-light: #050505;
 	--app-color-surface-card: #111;
 	--app-color-surface-field: #050505;
 	--app-color-surface-switch-track: #202020;
