@@ -42,7 +42,7 @@
 		left: calc(100% - $track-height * 0.5);
 	}
 
-	&__input:focus-within ~ &__track > &__thumb {
+	&__input:focus-visible ~ &__track > &__thumb {
 		@include tab-selected;
 	}
 
