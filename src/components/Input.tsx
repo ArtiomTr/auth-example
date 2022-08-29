@@ -28,6 +28,7 @@ export const Input = ({
 
 	return (
 		<div
+			role="group"
 			className={clsx(
 				classes['field'],
 				hasError && classes['field--error'],
@@ -61,7 +62,7 @@ export const Input = ({
 			</div>
 			<div
 				id={errorElementId}
-				aria-live={hasError ? 'polite' : 'off'}
+				aria-live="polite"
 				className={classes['field__helper-text']}
 			>
 				{error || ' '}
