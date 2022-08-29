@@ -35,6 +35,7 @@ export default defineConfig((environment) => {
 			plugins: [...sharedOptions.plugins!],
 			build: {
 				cssCodeSplit: false,
+				minify: 'terser',
 			},
 			css: {
 				postcss: {

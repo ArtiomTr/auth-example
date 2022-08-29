@@ -35,6 +35,9 @@ jobs:
             - name: Build
               run: pnpm build --base /${{ github.event.repository.name }}/
 
+            - name: CSS compression
+              run: pnpm compress:css
+
             - name: Deploy
               uses: peaceiris/actions-gh-pages@v3
               with:
