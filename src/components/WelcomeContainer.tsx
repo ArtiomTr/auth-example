@@ -33,23 +33,30 @@ export const WelcomeContainer = ({
 			<ThemeSwitch />
 		</header>
 		<section className={classes['content']}>
-			<Heading variant="h1" as="h2">
+			<Heading
+				className={classes['content__heading']}
+				variant="h1"
+				as="h2"
+			>
 				Welcome back!
 			</Heading>
-
-			<p>
-				We&apos;re happy to see you. Please, enter your credentials to
-				log into DummyApp.
+			<p className={classes['content__text']}>
+				We&apos;re happy to see you. Lorem ipsum dolor sit amet,
+				consectetur adipiscing elit. Sed tristique ultrices eros non
+				pretium. Suspendisse potenti. Vestibulum nibh elit, efficitur et
+				porttitor ut, tempus quis magna.
 			</p>
 		</section>
 		<footer className={classes['footer']}>
-			<span>Copyright © 2022 Dummy Inc. All rights reserved.</span>
+			<span className={classes['footer__copyright']}>
+				Copyright © 2022 Dummy Inc. All rights reserved.
+			</span>
 			<a
 				target="_blank"
 				rel="noreferrer"
 				href="https://github.com/ArtiomTr/auth-example#readme"
 			>
-				<GithubIcon />
+				<GithubIcon className={classes['footer__github']} />
 			</a>
 		</footer>
 	</div>

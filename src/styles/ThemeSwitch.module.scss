@@ -42,6 +42,10 @@
 		left: calc(100% - $track-height * 0.5);
 	}
 
+	&__input:focus-visible ~ &__track > &__thumb {
+		@include tab-selected;
+	}
+
 	&__thumb {
 		display: flex;
 		justify-content: center;
