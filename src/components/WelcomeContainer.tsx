@@ -43,7 +43,9 @@ export const WelcomeContainer = ({
 			</p>
 		</section>
 		<footer className={classes['footer']}>
-			<span>Copyright © 2022 Dummy Inc. All rights reserved.</span>
+			<span className={classes['footer__copyright']}>
+				Copyright © 2022 Dummy Inc. All rights reserved.
+			</span>
 			<a
 				target="_blank"
 				rel="noreferrer"
