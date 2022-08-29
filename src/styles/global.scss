@@ -1,5 +1,8 @@
 @import 'utils.scss';
 
+$dots-background-size: 50px;
+$dots-background-dot-size: 1px;
+
 /* Common variables for both themes */
 :root {
 	/* Fonts */
@@ -42,10 +45,12 @@
 	--app-shape-spacing-large: #{$spacing-step * 4};
 	--app-shape-radii-small: 5px;
 	--app-shape-radii-medium: 10px;
-	--app-shape-outline-focus: 2px;
+	--app-shape-outline-focus: 3px;
 	--app-shape-icon-size: 1.5rem;
 	--app-shape-track-height: 1rem;
 	--app-shape-track-width: 45px;
+	--app-shape-logo-size: 60px;
+	--app-image-background-size: #{$dots-background-size};
 }
 
 /* Variables for dark theme. */
@@ -59,19 +64,22 @@ html {
 	--app-color-surface-button: #303030;
 	--app-color-surface-disabled: #000;
 	--app-color-text-default: #cdcdcd;
+	--app-color-text-dimmed: #888;
 	--app-color-text-active: #fff;
 	--app-color-text-error: #f4256d;
 	--app-color-text-disabled: #4d4d4d;
-	--app-color-outline-focus: #fff;
-
-	--app-image-button-loading: conic-gradient(
-		transparent 10%,
+	--app-color-outline-focus: #669df6;
+	--app-image-background-src: #{dots-grid(
+			#272727,
+			$dots-background-dot-size,
+			$dots-background-size
+		)};
+	--app-image-button-loading: radial-gradient(
+		circle at 50% 10%,
 		#df94f4 20%,
 		#3272ff,
-		transparent 50%
+		transparent 40%
 	);
-	// radial-gradient(circle at 50% 10%, #df94f4 20%, #3272ff, transparent 40%)
-	// radial-gradient(circle at 40% 10%, #df94f4 20%, #3272ff, transparent 30%), radial-gradient(circle at 60% 90%, #df94f4 20%, #3272ff, transparent 30%)
 }
 
 /* Variables for light theme. */
@@ -85,7 +93,6 @@ html {
 	color: var(--app-color-text-default);
 	background-color: var(--app-color-surface-background);
 	font-family: var(--app-font-family-body);
-	font-size: var(--app-font-size-base);
 }
 
 body {

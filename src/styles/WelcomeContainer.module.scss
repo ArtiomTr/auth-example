@@ -2,11 +2,11 @@
 
 .container {
 	&__heading {
-		margin: 16px 0;
+		margin: var(--app-shape-spacing) 0;
 	}
 
 	&__text {
 		max-width: 450px;
-		color: #888;
+		color: var(--app-color-text-dimmed);
 	}
 }

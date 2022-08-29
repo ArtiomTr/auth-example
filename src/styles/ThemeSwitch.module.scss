@@ -65,6 +65,6 @@
 
 	&__input:focus-visible ~ &__track > &__thumb {
 		// Highlight thumb when switch is focused.
-		@include tab-selected;
+		@include focus-ring;
 	}
 }

@@ -17,6 +17,7 @@
 
 	@include themed-media('tablet', 'mobile') {
 		grid-template-rows: min-content min-content 1fr min-content;
+
 		&__header,
 		&__footer {
 			padding: var(--app-shape-spacing-medium);
@@ -47,29 +48,18 @@
 
 		&__main {
 			grid-row: 1 / span 3;
-			box-sizing: border-box;
 
-			height: 100%;
-			padding: var(--app-shape-spacing-medium);
+			box-sizing: border-box;
 			display: flex;
 			justify-content: center;
 			align-items: center;
 
-			$background-size: 40px;
-			$dot-size: 1px;
-			$dot-color: #333;
-			background: radial-gradient(
-					$dot-color $dot-size,
-					transparent $dot-size
-				),
-				radial-gradient(
-					circle at ($background-size - $dot-size)
-						($background-size - $dot-size),
-					$dot-color $dot-size,
-					transparent $dot-size
-				),
-				var(--app-color-surface-background-light);
-			background-size: $background-size $background-size;
+			height: 100%;
+			padding: var(--app-shape-spacing-medium);
+			background-color: var(--app-color-surface-background-light);
+			background-image: var(--app-image-background-src);
+			background-size: var(--app-image-background-size)
+				var(--app-image-background-size);
 		}
 	}
 }

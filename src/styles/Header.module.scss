@@ -10,14 +10,14 @@
 	text-decoration: none;
 
 	&__logo {
-		width: 60px;
-		height: 60px;
+		height: var(--app-shape-logo-size);
+		width: var(--app-shape-logo-size);
 	}
 
 	&__name {
-		margin-left: 10px;
+		margin-left: var(--app-shape-spacing-medium);
 		color: var(--app-color-text-active);
 		font-size: var(--app-font-size-h6);
-		font-size: 1.3rem;
+		white-space: nowrap;
 	}
 }

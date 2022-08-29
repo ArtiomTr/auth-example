@@ -13,7 +13,7 @@ export const SignIn = () => {
 			password: '',
 		},
 		onSubmit: async (values) => {
-			await new Promise((resolve) => setTimeout(resolve, 5000));
+			await new Promise((resolve) => setTimeout(resolve, 1000));
 			// eslint-disable-next-line no-console
 			console.log(JSON.stringify(values, undefined, 4));
 		},

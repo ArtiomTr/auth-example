@@ -1,21 +1,32 @@
+@import 'utils.scss';
+
 .footer {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 
 	&__copyright {
-		color: #444;
+		color: var(--app-color-text-dimmed);
 	}
 
-	&__github {
-		color: #fff;
-		width: 2rem;
-		height: 2rem;
-		transition: themed-transition(color);
+	.github-link {
 		margin-left: var(--app-shape-spacing-large);
+		border-radius: 50%;
+		display: flex;
 
-		&:hover {
-			color: #cdcdcd;
+		&:focus-visible {
+			@include focus-ring;
+		}
+
+		&__icon {
+			color: var(--app-color-text-default);
+			width: 2rem;
+			height: 2rem;
+			transition: themed-transition(color);
+
+			&:hover {
+				color: var(--app-color-text-active);
+			}
 		}
 	}
 }
