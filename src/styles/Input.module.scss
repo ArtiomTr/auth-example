@@ -25,12 +25,12 @@
 		outline: none;
 		border: none;
 		background: none;
-		padding: 0;
 		width: 100%;
 
 		/* Positioning */
 		grid-column: 2;
 		grid-row: 2;
+		box-sizing: border-box;
 
 		/* View styles */
 		text-overflow: ellipsis;
