@@ -1,3 +1,5 @@
+@import 'utils.scss';
+
 .welcome-container {
 	padding: 40px;
 	box-sizing: border-box;
@@ -12,8 +14,21 @@
 		align-items: center;
 	}
 
-	.footer__copyright {
-		color: #444;
+	.footer {
+		&__copyright {
+			color: #444;
+		}
+
+		&__github {
+			color: #fff;
+			width: 2rem;
+			height: 2rem;
+			transition: themed-transition(color);
+
+			&:hover {
+				color: #cdcdcd;
+			}
+		}
 	}
 
 	.content {

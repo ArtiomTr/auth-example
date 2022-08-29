@@ -51,7 +51,7 @@ export const WelcomeContainer = ({
 				rel="noreferrer"
 				href="https://github.com/ArtiomTr/auth-example#readme"
 			>
-				<GithubIcon />
+				<GithubIcon className={classes['footer__github']} />
 			</a>
 		</footer>
 	</div>
