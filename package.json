@@ -6,7 +6,9 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build",
+		"build": "vite build && pnpm compress:css",
+		"compress:css": "zxpp ./scripts/cssCompress.ts --dir ./dist/assets",
+		"preview": "vite preview",
 		"lint": "eslint .",
 		"lint:fix": "pnpm lint --fix",
 		"format": "prettier --write **/*.{ts,tsx,js,jsx,json,yaml,yml,css,scss,sass}",
@@ -26,10 +28,13 @@
 		"eslint": "^8.23.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-jsx-a11y": "^6.6.1",
+		"postcss": "^8.4.16",
 		"prettier": "^2.7.1",
 		"sass": "^1.54.5",
 		"typescript": "^4.8.2",
-		"vite": "^3.0.9"
+		"vite": "^3.0.9",
+		"zx": "2.0.0",
+		"zxpp": "^0.2.1"
 	},
 	"dependencies": {
 		"@fontsource/inter": "^4.5.12",
