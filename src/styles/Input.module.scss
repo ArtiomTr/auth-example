@@ -20,6 +20,13 @@
 		margin-top: var(--app-shape-spacing-tiny);
 	}
 
+	&__input,
+	&__input::placeholder {
+		text-overflow: ellipsis;
+		font-family: var(--app-font-family-body);
+		font-size: var(--app-font-size-medium);
+	}
+
 	&__input {
 		/* Unset default styles */
 		outline: none;
@@ -33,9 +40,6 @@
 		box-sizing: border-box;
 
 		/* View styles */
-		text-overflow: ellipsis;
-		font-family: var(--app-font-family-body);
-		font-size: var(--app-font-size-medium);
 		padding: var(--app-shape-spacing-small);
 		padding-top: calc(
 			var(--app-shape-spacing-small) + var(--app-font-size-tiny)
@@ -73,7 +77,9 @@
 	}
 
 	&__input:focus ~ &__label,
-	&__input:not(:placeholder-shown) ~ &__label {
+	&__input:not([value='']) ~ &__label,
+	&__input:placeholder-shown ~ &__label,
+	&__input:-webkit-autofill ~ &__label {
 		top: var(--app-shape-spacing-tiny);
 		font-size: var(--app-font-size-tiny);
 	}

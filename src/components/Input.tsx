@@ -44,7 +44,6 @@ export const Input = ({
 					aria-invalid={hasError}
 					aria-errormessage={errorElementId}
 					className={classes['field__input']}
-					placeholder=" "
 					{...other}
 					id={propertyId ?? labelId}
 				/>
