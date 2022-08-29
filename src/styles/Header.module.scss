@@ -1,0 +1,22 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.brand {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+
+	&__logo {
+		width: 60px;
+		height: 60px;
+	}
+
+	&__name {
+		margin-left: 10px;
+		color: var(--app-color-text-active);
+		font-size: 1.3rem;
+	}
+}

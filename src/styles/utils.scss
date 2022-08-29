@@ -6,3 +6,48 @@
 	@return $property + ' ' + var(--app-transition-duration-#{$duration}) + ' ' +
 		var(--app-transition-easing-#{$easing});
 }
+
+$breakpoints-begin: (
+	'desktop': 980px,
+	'tablet': 570px,
+	'mobile': 0px,
+);
+
+$breakpoints-end: (
+	'desktop': null,
+	'tablet': 980px,
+	'mobile': 570px,
+);
+
+@mixin themed-media($types...) {
+	$media-query: '';
+
+	@for $i from 0 to length($types) {
+		$type: nth($types, $i + 1);
+		$breakpoint-begin: map-get(
+			$map: $breakpoints-begin,
+			$key: $type,
+		);
+		$breakpoint-end: map-get(
+			$map: $breakpoints-end,
+			$key: $type,
+		);
+
+		@if $breakpoint-begin == null {
+			@error "Specified value '#{$type}' is not valid breakpoint.";
+		}
+
+		@if $media-query != '' {
+			$media-query: $media-query + ', ';
+		}
+		$media-query: $media-query + '(min-width: #{$breakpoint-begin})';
+		@if $breakpoint-end != null {
+			$media-query: $media-query +
+				' and (max-width: #{$breakpoint-end - 1px})';
+		}
+	}
+
+	@media #{$media-query} {
+		@content;
+	}
+}

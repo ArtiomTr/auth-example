@@ -1,29 +1,78 @@
+@import 'utils.scss';
+
 .app {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: center;
-	height: 100vh;
-	justify-content: center;
+	min-height: 100vh;
 
-	$background-size: 40px;
-	$dot-size: 1px;
-	$dot-color: #333;
-	background: radial-gradient($dot-color $dot-size, transparent $dot-size),
-		radial-gradient(
-			circle at ($background-size - $dot-size)
-				($background-size - $dot-size),
-			$dot-color $dot-size,
-			transparent $dot-size
-		);
-	background-size: $background-size $background-size;
-
-	&__auth-container {
-		justify-self: center;
-		margin: 20px;
+	&__header,
+	&__footer {
+		padding: var(--app-shape-spacing-large);
 	}
 
-	&__welcome-container {
-		background-color: #000;
-		height: 100%;
+	&__welcome {
+		padding: 0 var(--app-shape-spacing-large);
+	}
+
+	&__welcome {
+		grid-row: 2;
+	}
+
+	@include themed-media('mobile') {
+		&__footer,
+		&__main {
+			background-color: var(--app-color-surface-card);
+		}
+	}
+
+	@include themed-media('tablet', 'mobile') {
+		grid-template-rows: min-content min-content 1fr min-content;
+		&__welcome {
+			padding: var(--app-shape-spacing-large);
+		}
+	}
+
+	@include themed-media('desktop', 'tablet') {
+		justify-content: center;
+	}
+
+	@include themed-media('desktop') {
+		align-items: center;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: min-content 1fr min-content;
+
+		&__header {
+			grid-column: 2;
+		}
+
+		&__footer {
+			grid-column: 2;
+		}
+
+		&__main {
+			grid-row: 1 / span 3;
+			box-sizing: border-box;
+
+			height: 100%;
+			padding: var(--app-shape-spacing-medium);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			$background-size: 40px;
+			$dot-size: 1px;
+			$dot-color: #333;
+			background: radial-gradient(
+					$dot-color $dot-size,
+					transparent $dot-size
+				),
+				radial-gradient(
+					circle at ($background-size - $dot-size)
+						($background-size - $dot-size),
+					$dot-color $dot-size,
+					transparent $dot-size
+				),
+				var(--app-color-surface-background-light);
+			background-size: $background-size $background-size;
+		}
 	}
 }
