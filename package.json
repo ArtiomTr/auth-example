@@ -6,7 +6,8 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && pnpm compress:css",
+		"build": "vite build",
+		"postbuild": "pnpm compress:css",
 		"compress:css": "zxpp ./scripts/cssCompress.ts --dir ./dist/assets",
 		"preview": "vite preview",
 		"lint": "eslint .",
