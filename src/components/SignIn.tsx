@@ -1,6 +1,7 @@
 import { ReactiveFormProvider, useForm } from '@reactive-forms/core';
 import { Form } from '@reactive-forms/dom';
 import classes from '../styles/SignIn.module.scss';
+import { CheckboxField } from './CheckboxField';
 import { EmailField } from './EmailField';
 import { Heading } from './Heading';
 import { PasswordField } from './PasswordField';
@@ -11,6 +12,7 @@ export const SignIn = () => {
 		initialValues: {
 			email: '',
 			password: '',
+			staySignedIn: false,
 		},
 		onSubmit: async (values) => {
 			await new Promise((resolve) => setTimeout(resolve, 2000));
@@ -35,6 +37,10 @@ export const SignIn = () => {
 						required
 						minLength={6}
 						maxLength={20}
+					/>
+					<CheckboxField
+						label="Stay signed in?"
+						path={paths.staySignedIn}
 					/>
 					<SubmitButton className={classes['form__submit-button']}>
 						Sign in
