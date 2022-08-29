@@ -49,13 +49,7 @@
 	&__helper-text {
 		font-size: var(--app-font-size-small);
 		margin: var(--app-shape-spacing-tiny) var(--app-shape-spacing-small);
-		opacity: 1;
-		transition: themed-transition(opacity, short);
-
-		&--empty {
-			opacity: 0;
-			transition: themed-transition(opacity);
-		}
+		white-space: pre;
 	}
 
 	&__label {

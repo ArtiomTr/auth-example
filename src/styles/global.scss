@@ -8,7 +8,7 @@ $dots-background-dot-size: 1px;
 	/* Fonts */
 	--app-font-family-heading: 'Inter', serif;
 	--app-font-family-body: 'Inter', sans-serif;
-	font-size: 16px;
+	font-size: 18px;
 	--app-font-size-tiny: 0.75rem;
 	--app-font-size-small: 0.875rem;
 	--app-font-size-medium: 1rem;
@@ -24,7 +24,7 @@ $dots-background-dot-size: 1px;
 	}
 
 	@include themed-media('desktop', 'tablet') {
-		--app-font-size-h1: 4rem;
+		--app-font-size-h1: 3.5rem;
 		--app-font-size-h2: 3rem;
 		--app-font-size-h3: 2.75rem;
 		--app-font-size-h4: 2.125rem;

@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import { type InputHTMLAttributes, useId } from 'react';
 
 import classes from '../styles/Input.module.scss';
-import { usePrevious } from '../utils/usePrevious';
 
 export type InputProps = Omit<
 	InputHTMLAttributes<HTMLInputElement>,
@@ -25,11 +24,11 @@ export const Input = ({
 	const labelId = useId();
 	const errorElementId = useId();
 
-	const previousHelperText = usePrevious(error);
 	const hasError = Boolean(error);
 
 	return (
 		<div
+			role="group"
 			className={clsx(
 				classes['field'],
 				hasError && classes['field--error'],
@@ -43,9 +42,7 @@ export const Input = ({
 				)}
 				<input
 					aria-invalid={hasError}
-					aria-errormessage={
-						(hasError && errorElementId) || undefined
-					}
+					aria-errormessage={errorElementId}
 					className={classes['field__input']}
 					placeholder=" "
 					{...other}
@@ -65,13 +62,10 @@ export const Input = ({
 			</div>
 			<div
 				id={errorElementId}
-				aria-live={hasError ? 'polite' : 'off'}
-				className={clsx(
-					classes['field__helper-text'],
-					!error && classes['field__helper-text--empty'],
-				)}
+				aria-live="polite"
+				className={classes['field__helper-text']}
 			>
-				{error || previousHelperText || 'empty'}
+				{error || ' '}
 			</div>
 		</div>
 	);
