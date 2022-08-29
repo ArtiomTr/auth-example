@@ -44,7 +44,7 @@
 	&::after {
 		content: '';
 		position: absolute;
-		inset: $border-size;
+		inset: 0;
 		z-index: -1; // Under button's content, but over border element.
 
 		background-color: var(--app-color-surface-button);
@@ -53,6 +53,10 @@
 	}
 
 	&--loading {
+		&::after {
+			inset: $border-size;
+		}
+
 		/**
 		* Border element for the button
 		*/
@@ -83,7 +87,7 @@
 	}
 
 	&:active:not(:disabled) {
-		transform: scale(0.94);
+		transform: scale(0.96);
 		transition: themed-transition(transform);
 	}
 
