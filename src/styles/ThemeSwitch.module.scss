@@ -1,63 +1,70 @@
 @import 'utils.scss';
 
 .switch {
-	$track-width: 45px;
-	$track-height: 16px;
-	$thumb-width: 40px;
-	$thumb-height: 40px;
+	$track-width: var(--app-shape-track-width);
+	$track-height: var(--app-shape-track-height);
+	$thumb-size: calc(
+		var(--app-shape-icon-size) + var(--app-shape-spacing-small) * 2
+	);
 
-	width: $track-width + $thumb-width;
-	height: $thumb-height;
 	position: relative;
 	display: inline-block;
+	width: calc($track-width + $thumb-size);
+	height: $thumb-size;
+
+	&__track {
+		/* Positioning */
+		position: relative;
+		margin: calc(($thumb-size - $track-height) * 0.5)
+			calc($thumb-size * 0.5);
+
+		/* Layout */
+		display: inline-block;
+
+		/* View styles */
+		width: $track-width;
+		height: $track-height;
+		pointer-events: none;
+		border-radius: calc($track-height * 0.5);
+		background-color: var(--app-color-surface-switch-track);
+	}
+
+	&__thumb {
+		/* Positioning */
+		position: absolute;
+		left: calc($track-height * 0.5);
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+		/* Layout */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		/* View styles */
+		width: $thumb-size;
+		height: $thumb-size;
+		border-radius: 50%;
+		background-color: var(--app-color-surface-button);
+		transition: themed-transition(left);
+	}
 
 	&__input {
 		position: absolute;
 		inset: 0;
-		opacity: 0.001;
 		margin: 0;
+
+		opacity: 0.001; // Make input not visible, but focusable.
 		cursor: pointer;
 	}
 
-	&__input[aria-checked='true'] ~ &__thumb {
-		&::after {
-			left: 100%;
-			top: 50%;
-		}
-	}
-
-	&__track {
-		width: $track-width;
-		height: $track-height;
-		margin: (($thumb-height - $track-height) * 0.5) ($thumb-width * 0.5);
-		display: inline-block;
-		border-radius: $track-height * 0.5;
-		inset: 0;
-		position: relative;
-		pointer-events: none;
-		background-color: #202020;
-	}
-
 	&__input[aria-checked='true'] ~ &__track > &__thumb {
+		// Move thumb when switch is toggled.
 		left: calc(100% - $track-height * 0.5);
 	}
 
 	&__input:focus-visible ~ &__track > &__thumb {
+		// Highlight thumb when switch is focused.
 		@include tab-selected;
-	}
-
-	&__thumb {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		position: absolute;
-		width: $thumb-width;
-		height: $thumb-height;
-		transform: translate(-50%, -50%);
-		left: $track-height * 0.5;
-		top: 50%;
-		border-radius: 50%;
-		background-color: #303030;
-		transition: themed-transition(left);
 	}
 }
