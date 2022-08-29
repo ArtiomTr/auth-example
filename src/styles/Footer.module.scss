@@ -12,6 +12,7 @@
 		width: 2rem;
 		height: 2rem;
 		transition: themed-transition(color);
+		margin-left: var(--app-shape-spacing-large);
 
 		&:hover {
 			color: #cdcdcd;

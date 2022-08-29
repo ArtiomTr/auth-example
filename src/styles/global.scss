@@ -33,12 +33,17 @@
 	--app-transition-duration-short: 50ms;
 	--app-transition-duration-standard: 150ms;
 
-	/* Shape definitions */
 	$spacing-step: 8px;
 	--app-shape-spacing-tiny: #{$spacing-step * 0.5};
 	--app-shape-spacing-small: #{$spacing-step};
 	--app-shape-spacing-medium: #{$spacing-step * 2};
 	--app-shape-spacing-large: #{$spacing-step * 4};
+
+	/* Shape definitions */
+	@include themed-media('mobile') {
+		--app-shape-spacing-large: 20px;
+	}
+
 	--app-shape-radii-small: 5px;
 	--app-shape-radii-medium: 10px;
 	--app-shape-outline-focus: 2px;

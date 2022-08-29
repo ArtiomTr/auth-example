@@ -18,9 +18,7 @@ export const WelcomeContainer = ({
 		</Heading>
 		<p className={classes['container__text']}>
 			We&apos;re happy to see you. Lorem ipsum dolor sit amet, consectetur
-			adipiscing elit. Sed tristique ultrices eros non pretium.
-			Suspendisse potenti. Vestibulum nibh elit, efficitur et porttitor
-			ut, tempus quis magna.
+			adipiscing elit.
 		</p>
 	</section>
 );
