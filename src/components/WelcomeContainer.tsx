@@ -33,10 +33,13 @@ export const WelcomeContainer = ({
 			<ThemeSwitch />
 		</header>
 		<section className={classes['content']}>
-			<Heading variant="h1" as="h2">
+			<Heading
+				className={classes['content__heading']}
+				variant="h1"
+				as="h2"
+			>
 				Welcome back!
 			</Heading>
-
 			<p>
 				We&apos;re happy to see you. Please, enter your credentials to
 				log into DummyApp.
