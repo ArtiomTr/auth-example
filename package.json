@@ -2,8 +2,11 @@
 	"name": "auth-example",
 	"private": true,
 	"version": "1.0.0",
-	"description": "",
-	"main": "index.js",
+	"description": "Example SPA sign in application",
+	"homepage": "./dist/index.html",
+	"keywords": [],
+	"author": "Artiom Tretjakovas",
+	"license": "MIT",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -14,9 +17,6 @@
 		"format": "prettier --write **/*.{ts,tsx,js,jsx,json,yaml,yml,css,scss,sass}",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
 	"devDependencies": {
 		"@honkhonk/vite-plugin-svgr": "^1.1.0",
 		"@sirse-dev/eslint-config": "^1.0.12",
