@@ -45,6 +45,17 @@ export const SignIn = () => {
 					<SubmitButton className={classes['form__submit-button']}>
 						Sign in
 					</SubmitButton>
+					<nav className={classes['form__nav']}>
+						<a
+							className={classes['link']}
+							href="#password-recovery"
+						>
+							Password recovery
+						</a>
+						<a className={classes['link']} href="#sign-up">
+							Sign up
+						</a>
+					</nav>
 				</Form>
 			)}
 		</ReactiveFormProvider>
