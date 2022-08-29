@@ -3,10 +3,10 @@ import { domPlugin } from '@reactive-forms/dom';
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './components/App';
+import { ThemeController } from './utils/ThemeController';
 
 import '@fontsource/inter/500.css';
 import './styles/global.scss';
-import { ThemeController } from './utils/ThemeController';
 
 new ThemeController().initialize();
 

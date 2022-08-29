@@ -30,6 +30,8 @@
 	--app-shape-radii-medium: 10px;
 	--app-shape-outline-focus: 2px;
 	--app-shape-icon-size: 1.5rem;
+	--app-shape-track-height: 1rem;
+	--app-shape-track-width: 45px;
 }
 
 /* Variables for dark theme. */
@@ -38,7 +40,8 @@ html {
 	--app-color-surface-background: #050505;
 	--app-color-surface-card: #111;
 	--app-color-surface-field: #050505;
-	--app-color-surface-button: #202020;
+	--app-color-surface-switch-track: #202020;
+	--app-color-surface-button: #303030;
 	--app-color-surface-disabled: #000;
 	--app-color-text-default: #cdcdcd;
 	--app-color-text-active: #fff;
