@@ -11,6 +11,7 @@ export const Footer = ({ className, ...passedProps }: FooterProps) => (
 			Copyright © 2022 Dummy Inc. All rights reserved.
 		</span>
 		<a
+			aria-label="GitHub repository"
 			target="_blank"
 			rel="noreferrer"
 			href="https://github.com/ArtiomTr/auth-example#readme"
