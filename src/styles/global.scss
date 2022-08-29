@@ -69,6 +69,8 @@ html {
 	--app-color-text-error: #f4256d;
 	--app-color-text-disabled: #4d4d4d;
 	--app-color-outline-focus: #669df6;
+	--app-color-checkbox-active: #10346e;
+	--app-color-checkbox-mark: #fff;
 	--app-image-background-src: #{dots-grid(
 			#272727,
 			$dots-background-dot-size,
@@ -99,8 +101,8 @@ html.theme-light {
 	--app-color-text-active: #000;
 	--app-color-text-error: #b00020;
 	--app-color-text-disabled: #4d4d4d;
-	--app-color-outline-focus: #669df6;
 	--app-color-outline-card: #f3f3f3;
+	--app-color-checkbox-active: #669df6;
 	--app-image-background-src: #{dots-grid(
 			#dddddd,
 			$dots-background-dot-size,

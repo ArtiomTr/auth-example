@@ -1,0 +1,53 @@
+@import 'utils.scss';
+
+.checkbox {
+	display: flex;
+	align-items: center;
+
+	&__input {
+		appearance: none;
+		margin: 0;
+	}
+
+	&__input:focus-visible ~ &__control {
+		@include focus-ring;
+	}
+
+	&__control {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--app-shape-spacing-tiny);
+		background-color: var(--app-color-surface-button);
+		cursor: pointer;
+		border-radius: var(--app-shape-radii-small);
+		overflow: hidden;
+	}
+
+	&__icon {
+		color: var(--app-color-checkbox-mark);
+		width: var(--app-font-size-medium);
+		height: var(--app-font-size-medium);
+		transform: translateY(25%);
+		opacity: 0;
+		transition: themed-transition(transform, short),
+			themed-transition(opacity, short);
+	}
+
+	&__label {
+		user-select: none;
+		margin-left: var(--app-shape-spacing-small);
+	}
+
+	$root: &;
+	&--checked {
+		#{$root}__control {
+			background-color: var(--app-color-checkbox-active);
+		}
+
+		#{$root}__icon {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
+}

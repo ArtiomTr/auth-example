@@ -31,6 +31,7 @@
 	font-size: var(--app-font-size-button);
 	color: var(--app-color-text-default);
 	cursor: pointer;
+	user-select: none;
 	transition: themed-transition(color), themed-transition(transform, short);
 
 	/**  
