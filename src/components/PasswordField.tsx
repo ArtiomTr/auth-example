@@ -67,6 +67,8 @@ export const PasswordField = ({
 					)}
 				</IconButton>
 			}
+			minLength={minLength}
+			maxLength={maxLength}
 			required={required}
 			autoComplete="off"
 			startAdornment={<KeyIcon aria-hidden="true" />}
