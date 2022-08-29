@@ -14,8 +14,9 @@ export const Footer = ({ className, ...passedProps }: FooterProps) => (
 			target="_blank"
 			rel="noreferrer"
 			href="https://github.com/ArtiomTr/auth-example#readme"
+			className={classes['github-link']}
 		>
-			<GithubIcon className={classes['footer__github']} />
+			<GithubIcon className={classes['github-link__icon']} />
 		</a>
 	</footer>
 );

@@ -22,6 +22,6 @@
 	}
 
 	&:focus-visible {
-		@include tab-selected;
+		@include focus-ring;
 	}
 }
