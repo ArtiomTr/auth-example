@@ -1,8 +1,29 @@
+@import 'utils.scss';
+
 .form {
 	display: flex;
 	flex-direction: column;
 
 	&__submit-button {
-		align-self: flex-end;
+		width: 100%;
+		margin: var(--app-shape-spacing-medium) 0;
+	}
+
+	&__nav {
+		margin-bottom: var(--app-shape-spacing-medium);
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+}
+
+.link {
+	text-decoration: none;
+	color: var(--app-color-text-default);
+	transition: themed-transition(color, short);
+
+	&:hover {
+		color: var(--app-color-text-active);
+		text-decoration: underline;
 	}
 }
