@@ -62,7 +62,7 @@ html {
 	--app-color-surface-field: #050505;
 	--app-color-surface-switch-track: #202020;
 	--app-color-surface-button: #303030;
-	--app-color-surface-disabled: #000;
+	--app-color-surface-disabled: #030303;
 	--app-color-text-default: #cdcdcd;
 	--app-color-text-dimmed: #888;
 	--app-color-text-active: #fff;
@@ -80,13 +80,35 @@ html {
 		#3272ff,
 		transparent 40%
 	);
+	--app-color-outline-card: transparent;
+	--app-shadow-elevation-small: none;
 }
 
 /* Variables for light theme. */
 html.theme-light {
 	color-scheme: light;
-	--app-color-surface-background: rgb(255, 245, 245);
-	--app-color-text-default: #000;
+	--app-color-surface-background: #ffffff;
+	--app-color-surface-background-light: #f8f8f8;
+	--app-color-surface-card: #ffffff;
+	--app-color-surface-field: #e4e4e4;
+	--app-color-surface-switch-track: #818181;
+	--app-color-surface-button: #e4e4e4;
+	--app-color-surface-disabled: #bebebe;
+	--app-color-text-default: #1c2531;
+	--app-color-text-dimmed: #4b5563;
+	--app-color-text-active: #000;
+	--app-color-text-error: #b00020;
+	--app-color-text-disabled: #4d4d4d;
+	--app-color-outline-focus: #669df6;
+	--app-color-outline-card: #f3f3f3;
+	--app-image-background-src: #{dots-grid(
+			#dddddd,
+			$dots-background-dot-size,
+			$dots-background-size
+		)};
+	--app-shadow-elevation-small: rgba(0, 0, 0, 0.05) 0px 1px 3px,
+		rgba(0, 0, 0, 0.05) 0px 10px 15px -5px,
+		rgba(0, 0, 0, 0.05) 0px 7px 7px -5px;
 }
 
 html {

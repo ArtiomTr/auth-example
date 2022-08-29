@@ -13,9 +13,15 @@
 		&__main {
 			background-color: var(--app-color-surface-card);
 		}
+
+		&__main-card {
+			box-shadow: none !important;
+			outline: none !important;
+		}
 	}
 
 	@include themed-media('tablet', 'mobile') {
+		background-color: var(--app-color-surface-background-light);
 		grid-template-rows: min-content min-content 1fr min-content;
 
 		&__header,
