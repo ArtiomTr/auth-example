@@ -11,6 +11,7 @@
 	display: inline-block;
 	width: calc($track-width + $thumb-size);
 	height: $thumb-size;
+	-webkit-tap-highlight-color: transparent;
 
 	&__track {
 		/* Positioning */
