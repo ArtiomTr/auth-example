@@ -3,6 +3,7 @@
 .checkbox {
 	display: flex;
 	align-items: center;
+	-webkit-tap-highlight-color: transparent;
 
 	&__input {
 		appearance: none;
