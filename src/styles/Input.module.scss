@@ -27,6 +27,10 @@
 		font-size: var(--app-font-size-medium);
 	}
 
+	&__input::-ms-reveal {
+		display: none;
+	}
+
 	&__input {
 		/* Unset default styles */
 		outline: none;
